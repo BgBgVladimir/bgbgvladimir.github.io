@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Игры</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center/cover;
+            color: white;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .game-item {
+            text-align: center;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .game-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Главная</a>
+        <a href="#">О нас</a>
+        <a href="#">Контакты</a>
+    </div>
+    <div class="container" id="games">
+        <div class="game-item" onclick="openGame('game1.html')">
+            <img src="game1_icon.png" alt="Игра 1">
+            <p>Игра 1</p>
+        </div>
+        <div class="game-item" onclick="openGame('game2.html')">
+            <img src="game2_icon.png" alt="Игра 2">
+            <p>Игра 2</p>
+        </div>
+        <div class="game-item" onclick="openGame('game3.html')">
+            <img src="game3_icon.png" alt="Игра 3">
+            <p>Игра 3</p>
+        </div>
+    </div>
+    <script>
+        function openGame(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
