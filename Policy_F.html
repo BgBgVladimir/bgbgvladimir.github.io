@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Policy - BgBg Games</title>
+    <title>Privacy Policy - BgBg Games</title>
     <style>
         body {
             margin: 0;
@@ -117,7 +117,7 @@
     <h1>Privacy Policy</h1>
     <p>Last updated: 2025-02-23</p>
 
-    <p>Volodymyr Prokhorovych ("I," "me," "my," or "mine") provides this Privacy Policy (this "Policy") to describe the types of information I collect from you ("users," "your," or "you") when you use my website available at [Insert your website address here] or any game I provide on a mobile platform (each a "Service," collectively, the "Services").</p>
+    <p>Volodymyr Prokhorovych ("I," "me," "my," or "mine") provides this Privacy Policy (this "Policy") to describe the types of information I collect from you ("users," "your," or "you") when you use my website available at https://bgbgvladimir.github.io/ or any game I provide on a mobile platform (each a "Service," collectively, the "Services").</p>
 
     <p>My Privacy Policy tells you what <strong>personal data</strong> and <strong>non-personal data</strong> I collect from you, how I collect them, how I protect them, how I share them, how you can access and change them, and how you can limit my sharing of them. The Privacy Policy also explains certain legal rights that you have with respect to your personal data.</p>
 
@@ -214,66 +214,7 @@
 
 <h2>Data Controller’s Contact Information</h2>
 
-<p>Address: [Your Address Here]<br>
-Email address: [Your Email Address Here]</p>
+<p> Email address: BgBgVladimir@gmail.com </p>
     </div>
-    <script>
-        // Анимация метеоритов
-        const canvas = document.getElementById('backgroundCanvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        class Meteor {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * -canvas.height;
-                this.speed = Math.random() * 2 + 1;
-                this.size = Math.random() * 3 + 2; // Размер кружочка
-                this.color = `rgba(255, ${Math.random() * 100 + 155}, 0, 0.8)`; // Цвет кружочка
-            }
-
-            update() {
-                this.y += this.speed;
-                if (this.y > canvas.height) {
-                    this.y = Math.random() * -canvas.height;
-                    this.x = Math.random() * canvas.width;
-                }
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); // Рисуем кружочек
-                ctx.fillStyle = this.color;
-                ctx.fill();
-            }
-        }
-
-        const meteors = [];
-        for (let i = 0; i < 50; i++) {
-            meteors.push(new Meteor());
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            meteors.forEach(meteor => {
-                meteor.update();
-                meteor.draw();
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
