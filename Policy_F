@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - BgBg Games</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: black;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: calc(100% - 4px);
+            background: rgba(0, 0, 0, 0.9); /* Прозрачность уменьшена до 90% */
+            padding: 15px 0;
+            text-align: center;
+            z-index: 10;
+            border: 2px solid white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .studio-title {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: bold;
+            margin-top: 100px;
+            position: relative;
+            z-index: 5;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3),
+                         4px 4px 6px rgba(255, 255, 255, 0.2),
+                         6px 6px 8px rgba(255, 255, 255, 0.1);
+        }
+        .contact-text {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 50px;
+            position: relative;
+            z-index: 5;
+            color: white;
+        }
+        .contact-text a {
+            color: #ff8a00;
+            text-decoration: none;
+        }
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="studio-title">BgBg Games</div>
+    <div class="contact-text">
+        Privacy Policy
+Last updated: 2025-02-23
+Volodymyr Prokhorovych ("I," "me," "my," or "mine") provides this Privacy Policy (this "Policy") to describe the types of information I collect from you ("users," "your," or "you") when you use my website available at [Insert your website address here] or any game I provide on a mobile platform (each a "Service," collectively, the "Services").
+My Privacy Policy tells you what personal data and non-personal data I collect from you, how I collect them, how I protect them, how I share them, how you can access and change them, and how you can limit my sharing of them. The Privacy Policy also explains certain legal rights that you have with respect to your personal data.
+Information I Collect from You
+I do not collect any Personal Information like email address, birth date or time, age, name, phone number, or address from users.
+Support requests or direct communication
+If I do happen to obtain personal information, including emails or phone numbers, through support requests or other correspondence, it will be treated with the strictest confidentiality. Any such personal information will be retained for the purpose of resolving support requests and for future reference should you require support again. I will delete any such emails at your request.
+iPhone, iPad games
+My mobile games for iOS devices (iPhones/iPads) do not include third-party analytics or third-party advertising. I do not send personally identifiable information or device information to third parties.
+Android games
+Analytics data
+When you use my game downloaded from the Google Play Store, I use my third-party analytics service provider Firebase (https://firebase.google.com) offered by Google LLC, which automatically collects the following technical personal and non-personal data from you:
+Tracker
+Usage data
+Unique device identifiers for advertising (e.g., Google Advertiser ID or IDFA)
+Device information
+Geography/region
+Number of users
+Number of sessions
+Session duration
+In-app purchases
+Application opens
+Application updates
+Launches
+Operating systems
+I use such data to:
+Analyze gameplay data, improve the content, and track potential problems or trends with my Games and services, or to test my new game features and content.
+Understand you and your preferences and provide you with new game content and services, and tailor my products.
+Provide game updates, technical troubleshooting, understanding and analyzing trends in connection with usage of the Games, and administering the Games.
+Deliver advertisements and promotional information to you in my Apps.
+Cross-promote my Apps and services, meaning I may promote one of my Apps while you are playing a different App of mine.
+Sale of Personal Data and Successors
+I do not sell your personal data to third parties, and I do not intend to do so in the future.
+Use of Your Information by Others
+I may give your personal data to third-party service providers whom I hire to provide services on my behalf (my data processors).
+These third-party service providers include:
+[Analytics] Google Firebase (https://firebase.google.com/)
+[Advertising] AdMob (https://admob.google.com) for games downloaded from the Google Play Store
+[Advertising & Analytics] Unity Services (https://unity3d.com/)
+Legally Required Releases of Information
+I may be legally required to disclose your personal data if such disclosure is (a) required by subpoena, law, or other legal process; (b) necessary to assist law enforcement officials or governmental enforcement agencies; (c) necessary to investigate violations of or otherwise enforce my terms and conditions; (d) necessary to protect me from legal action or claims from third parties, including you and/or other users; or (e) necessary to protect the legal rights, personal/real property, or personal safety of my company, users, employees, and affiliates.
+Your Rights Under the GDPR and the CCPA
+When using my games or my website and submitting personal data to me, you may have certain rights under the GDPR if you reside in any of the countries of the European Union or the State of California. If you want to exercise any of your rights included in this Privacy Policy, please contact me by email (the contact information is available at the bottom of this Privacy Policy).
+You may have some or all of the following rights:
+Right to withdraw your consent in accordance with Art. 7 para. 3 GDPR (e.g., you may withdraw your consent to show you personalized ads. Please load Terms & Privacy from your Game settings and follow instructions in the section "Personalized Ads Consent Withdrawal" in the Privacy Policy (available to EEA-based users only)).
+Right to access your data in accordance with Art. 15 GDPR (e.g., you may check what data I store about you. Please load Terms & Privacy from your Game settings and follow instructions in the section "Request a Summary of Personal Data" in the Privacy Policy (available to EEA-based users only)).
+Right to correct your data in accordance with Art. 16 GDPR (e.g., you can contact me if your email address has changed and I should replace your old email address).
+Right to have your data deleted in accordance with Art. 17 GDPR (e.g., you can contact me if you want me to delete certain data that I have stored about you. Please load Terms & Privacy from your Game settings and follow instructions in the section "Request Personal Data to be Removed" in the Privacy Policy (available to EEA-based users only)).
+Right to limit data collection in accordance with Art. 18 GDPR (e.g., you can do it by withdrawing your consent in accordance with the instructions above).
+Right to take your data with you in accordance with Art. 20 GDPR (e.g., you can contact me to receive your data if you want to upload it to another service).
+Right to object to how your data is handled in accordance with Art. 21 GDPR (e.g., you can contact me if you do not agree with any user analytics procedures as described within this privacy policy).
+Right to send complaints to the supervisory authority in accordance with Art. 77 para. 1 f GDPR (e.g., you can contact the data protection supervisory authority directly).
+Children's Privacy
+My Policy Regarding Children. I do not knowingly collect or solicit personal data from anyone under the age of 16 or knowingly allow such persons to use my Services without the authorization of the holder of parental responsibility for the child.
+If you are under 16, please do not send any information about yourself to me, including your name, address, telephone number, or email address, without the authorization of your parents. No one under the age of 16 may provide any personal data without such authorization.
+In the event that I learn that I have collected personal data from a child under the age of 16 without the authorization of the holder of parental responsibility, I will delete that information as quickly as possible. If you believe that I might have any information from or about a child under the age of 16 without the aforementioned authorization, please contact me.
+Changes to This Policy
+I reserve the right to make changes to My Privacy Policy from time to time. Any such changes to My Privacy Policy will be posted here.
+Data Controller’s Contact Information
+Address: [Your Address Here], Email address: [Your Email Address Here]
+
+
+    </div>
+    <script>
+        // Анимация метеоритов
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Meteor {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * -canvas.height;
+                this.speed = Math.random() * 2 + 1;
+                this.size = Math.random() * 3 + 2; // Размер кружочка
+                this.color = `rgba(255, ${Math.random() * 100 + 155}, 0, 0.8)`; // Цвет кружочка
+            }
+
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.y = Math.random() * -canvas.height;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); // Рисуем кружочек
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        const meteors = [];
+        for (let i = 0; i < 50; i++) {
+            meteors.push(new Meteor());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            meteors.forEach(meteor => {
+                meteor.update();
+                meteor.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
