@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Игры</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background-color: black;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: calc(100% - 4px);
+            background: rgba(0, 0, 0, 0.9); /* Прозрачность уменьшена до 90% */
+            padding: 15px 0;
+            text-align: center;
+            z-index: 10;
+            border: 2px solid white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .studio-title {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: bold;
+            margin-top: 100px;
+            position: relative;
+            z-index: 5;
+            background: linear-gradient(45deg, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3),
+                         4px 4px 6px rgba(255, 255, 255, 0.2),
+                         6px 6px 8px rgba(255, 255, 255, 0.1);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 20px;
+            position: relative;
+            z-index: 5;
+        }
+        .game-item {
+            text-align: center;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .game-box {
+            background: rgba(0, 0, 0, 0.75);
+            border: 2px solid white;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 10px;
+            text-align: center;
+            width: 150px;
+            height: 180px;
+        }
+        .game-box img {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="studio-title">BgBg Games</div>
+    <div class="container" id="games">
+        <div class="game-item" onclick="openGame('game1.html')">
+            <div class="game-box">
+                <img src="https://play-lh.googleusercontent.com/QmnFlUY_Kgo6Vo4E6XiXuDvx-aAjDoxPdq8aQ5OEGGSY0RvVc5jr6uoqK40sjbpkWPY=w480-h960-rw" alt="RPG: Saving the Village">
+                <p>RPG: Saving the Village</p>
+            </div>
+        </div>
+        <div class="game-item" onclick="openGame('game2.html')">
+            <div class="game-box">
+                <img src="https://play-lh.googleusercontent.com/udET70zDiAvOb0QPNc2y__jCYb0pCDppPpG01IApBXuXi5wYJY8wmtHlC4JRHqLnBEQc=w480-h960-rw" alt="ARJoke: AR Camera 3D Reality">
+                <p>ARJoke: AR Camera 3D Reality</p>
+            </div>
+        </div>
+        <div class="game-item" onclick="openGame('game3.html')">
+            <div class="game-box">
+                <img src="https://lh3.googleusercontent.com/CNSKzOv3vVhGxCCTaKUKF9zQ5M2TWtTufafuwrW4urLFR_Q7m_Cu_tQ3wgdma7yOC5xt" alt="Cyberpithecus: RPG with Robots">
+                <p>Cyberpithecus: RPG with Robots</p>
+            </div>
+        </div>
+        <div class="game-item" onclick="openGame('nuclear_town.html')">
+            <div class="game-box">
+                <img src="NuclearTownIcon.png" alt="Nuclear Town">
+                <p>Nuclear Town</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openGame(url) {
+            window.location.href = url;
+        }
+
+        // Анимация метеоритов
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Meteor {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * -canvas.height;
+                this.speed = Math.random() * 2 + 1;
+                this.size = Math.random() * 3 + 2; // Размер кружочка
+                this.color = `rgba(255, ${Math.random() * 100 + 155}, 0, 0.8)`; // Цвет кружочка
+            }
+
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.y = Math.random() * -canvas.height;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); // Рисуем кружочек
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        const meteors = [];
+        for (let i = 0; i < 50; i++) {
+            meteors.push(new Meteor());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            meteors.forEach(meteor => {
+                meteor.update();
+                meteor.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
