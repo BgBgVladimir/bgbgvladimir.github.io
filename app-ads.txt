@@ -75,4 +75,8 @@ bidmachine.io, 114, RESELLER
 bidmachine.io, 67, RESELLER
 criteo.com, B-057955, RESELLER, 9fac4a4a87c2a44f
 
+
 facebook.com, 151531295913157, DIRECT, c3e20eee3f780d68
+
+
+google.com, pub-8576783811446704, DIRECT, f08c47fec0942fa0
