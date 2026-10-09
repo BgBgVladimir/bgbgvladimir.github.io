@@ -261,3 +261,7 @@ google.com, pub-8576783811446704, DIRECT, f08c47fec0942fa0
 
 #FBCyberpitek
 facebook.com, 151531295913157, DIRECT, c3e20eee3f780d68
+
+#ARFlyKiller
+#Admob
+google.com, pub-8576783811446704, DIRECT, f08c47fec0942fa0
