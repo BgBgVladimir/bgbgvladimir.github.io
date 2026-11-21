@@ -57,6 +57,68 @@
         .contact-text a:hover {
             text-decoration: underline;
         }
+        .contact-form {
+            max-width: 480px;
+            margin: 30px auto 60px;
+            padding: 24px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 2px solid white;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            position: relative;
+            z-index: 5;
+            box-sizing: border-box;
+        }
+        .contact-form label {
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            font: inherit;
+            font-size: 1rem;
+            padding: 10px;
+            color: white;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid #888;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #ff8a00;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+        .contact-form button {
+            margin-top: 16px;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: black;
+            background: #ff8a00;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-form button:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+        .contact-form .hp {
+            display: none;
+        }
+        .form-status {
+            min-height: 1.2em;
+            text-align: center;
+            margin-top: 8px;
+        }
+        .form-status.ok { color: #7CFC7C; }
+        .form-status.err { color: #ff6b6b; }
         canvas {
             position: fixed;
             top: 0;
@@ -75,9 +137,60 @@
     </div>
     <div class="studio-title">BgBg Games</div>
     <div class="contact-text">
-        Feel free to reach out for any reason, <a href="mailto:BgBgVladimir@gmail.com">BgBgVladimir@gmail.com</a>
+        Feel free to reach out for any reason
     </div>
+    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms access key (не раскрывает адрес почты): получить на https://web3forms.com -->
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New message from BgBg Games site">
+        <input type="hidden" name="from_name" value="BgBg Games site">
+        <!-- Защита от ботов: скрытое поле, люди его не заполняют -->
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required maxlength="100">
+
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" required maxlength="200">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required maxlength="5000"></textarea>
+
+        <button type="submit" id="submitBtn">Send</button>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
     <script>
+        // Отправка формы без перезагрузки страницы
+        const form = document.getElementById('contactForm');
+        const statusEl = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            statusEl.className = 'form-status';
+            statusEl.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            try {
+                const res = await fetch(form.action, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(form)
+                });
+                const data = await res.json();
+                if (res.ok && data.success) {
+                    statusEl.className = 'form-status ok';
+                    statusEl.textContent = 'Thanks! Your message has been sent.';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Error');
+                }
+            } catch (err) {
+                statusEl.className = 'form-status err';
+                statusEl.textContent = 'Sorry, the message could not be sent. Please try again later.';
+            } finally {
+                submitBtn.disabled = false;
+            }
+        });
+
         // Анимация метеоритов
         const canvas = document.getElementById('backgroundCanvas');
         const ctx = canvas.getContext('2d');
